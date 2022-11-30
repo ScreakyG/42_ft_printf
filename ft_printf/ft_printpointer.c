@@ -1,45 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.c                                         :+:      :+:    :+:   */
+/*   ft_printpointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/25 20:38:14 by francois          #+#    #+#             */
-/*   Updated: 2022/11/29 18:43:04 by francois         ###   ########.fr       */
+/*   Created: 2022/11/29 20:02:13 by francois          #+#    #+#             */
+/*   Updated: 2022/11/29 21:23:38 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "libft/libft.h"
 #include "libftprintf.h"
+#include <stdint.h>
 
-
-int	ft_putstrlen(char *str)
+void	ft_putptrlen(uintptr_t num)
 {
-	int	i;
-
-	i = 0;
-	while (str[i])
+	if (num >= 16)
 	{
-		write (1, &str[i], 1);
-		i++;
+		ft_putptrlen(num / 16);
+		ft_putptrlen(num % 16);
 	}
-	return (i);
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
 }
 
-int	ft_putcharlen(int c)
+int	ft_printpointer(unsigned long nb)
 {
-	write (1, &c, 1);
-	return (1);
-}
-
-int	ft_putnbrlen(int nb)
-{
-	char	*temp;
-	int	len;
-
-	temp = ft_itoa(nb);
-	len = ft_putstrlen(temp);
-	free(temp);
-	return (len);
+	write(1, "0x", 2);
+	ft_putptrlen(nb);
+	return (0);
 }

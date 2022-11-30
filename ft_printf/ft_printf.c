@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:43:29 by francois          #+#    #+#             */
-/*   Updated: 2022/11/25 23:03:28 by francois         ###   ########.fr       */
+/*   Updated: 2022/11/29 21:27:53 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,12 @@ int	ft_format(va_list ap, const char format)
 		len += ft_putstrlen(va_arg(ap, char *));
 	if (format == 'c')
 		len += ft_putcharlen(va_arg(ap, int));
-	if (format == 'd')
+	if (format == 'd' || format == 'i')
 		len += ft_putnbrlen(va_arg(ap, int));
+	if (format == 'x' || format == 'X')
+		len += ft_puthexlen(va_arg(ap, unsigned int), format);
+	if (format == 'p')
+		len += ft_printpointer(va_arg(ap, unsigned long));
 	if (format == '%')
 	{
 		write (1, "%", 1);
@@ -58,13 +62,8 @@ int	ft_printf(const char *str, ...)
 }
 int	main()
 {
-	void	*ptr;
-	char	*chaine;
-	int	i;
+	int	len;
 
-	
-	chaine = (char *)ptr;
-	chaine = "SALut";
-	i = ft_printf("");
-	printf("%s", "");
+	len = ft_printf("Salut affiche le chiffre en hexa : %p\n", &len);
+	printf("%p\n", &len);
 }
