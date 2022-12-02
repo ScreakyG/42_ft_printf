@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:39:39 by francois          #+#    #+#             */
-/*   Updated: 2022/11/29 21:28:02 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:33:15 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@ int	ft_putcharlen(int c);
 int	ft_putnbrlen(int nb);
 int	ft_puthexlen(unsigned int nb, const char format);
 int	ft_printpointer(unsigned long nb);
+int	ft_uitoa(unsigned int nb);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 20:38:14 by francois          #+#    #+#             */
-/*   Updated: 2022/12/01 17:29:36 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/02 19:56:48 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	ft_putnbrlen(int nb)
 		len += write(1, "0", 1);
 		return (len);
 	}
+	if (nb == -2147483648)
+		return (write(1, "-2147483648", 11));
 	temp = ft_itoa(nb);
 	len = ft_putstrlen(temp);
 	free(temp);

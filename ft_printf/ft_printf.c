@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:43:29 by francois          #+#    #+#             */
-/*   Updated: 2022/12/01 17:32:53 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/02 18:13:42 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_format(va_list ap, const char format)
 		len += ft_puthexlen(va_arg(ap, unsigned int), format);
 	if (format == 'p')
 		len += ft_printpointer(va_arg(ap, unsigned long));
+	if (format == 'u')
+		len += ft_putunsignednbr(va_arg(ap, unsigned int));
 	if (format == '%')
 	{
 		write (1, "%", 1);

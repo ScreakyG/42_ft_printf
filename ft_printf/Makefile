@@ -6,14 +6,14 @@
 #    By: francois <francois@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/24 17:46:07 by francois          #+#    #+#              #
-#    Updated: 2022/11/29 21:03:47 by francois         ###   ########.fr        #
+#    Updated: 2022/12/02 18:14:43 by francois         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 FLAGS = -c -Wall -Wextra -Werror
 INCLUDES = -I./includes
-SRCS = ft_printf.c ft_utils.c ft_puthexlen.c ft_printpointer.c
+SRCS = ft_printf.c ft_utils.c ft_puthexlen.c ft_printpointer.c ft_putunsignednbr.c
 OBJS = ${SRCS:.c=.o}
 cc = gcc
 
