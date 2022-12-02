@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "libft/libft.h"
+#include "includes/libftprintf.h"
 
 static int		ft_countnbr(unsigned int nb)
 {

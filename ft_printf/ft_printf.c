@@ -6,12 +6,12 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:43:29 by francois          #+#    #+#             */
-/*   Updated: 2022/11/29 21:27:53 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/01 17:32:53 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
-#include "./libft/libft.h"
+#include "includes/libftprintf.h"
+
 
 int	ft_format(va_list ap, const char format)
 {
@@ -41,7 +41,6 @@ int	ft_printf(const char *str, ...)
     int	i;
 	int	lentotal;
 	va_list	ap;
-	char	*str_arg;
 
 	i = 0;
 	lentotal = 0;
@@ -59,11 +58,4 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(ap);
 	return (lentotal);
-}
-int	main()
-{
-	int	len;
-
-	len = ft_printf("Salut affiche le chiffre en hexa : %p\n", &len);
-	printf("%p\n", &len);
 }

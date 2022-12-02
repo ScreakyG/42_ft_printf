@@ -11,21 +11,28 @@
 # **************************************************************************** #
 
 NAME = libftprintf.a
-FLAGS = -Wall -Wextra -Werror 
+FLAGS = -c -Wall -Wextra -Werror
+INCLUDES = -I./includes
 SRCS = ft_printf.c ft_utils.c ft_puthexlen.c ft_printpointer.c
 OBJS = ${SRCS:.c=.o}
+cc = gcc
 
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
+		make -C ./libft
+		cp libft/libft.a $(NAME)
+		$(CC) $(FLAGS) $(INCLUDES) $(SRCS)
 		ar rcs $(NAME) $(OBJS)
 
 clean : 
 		rm -f $(OBJS)
+		make clean -C ./libft 
 
 fclean : clean
 		rm -f $(NAME)
+		rm -f ./libft/libft.a
 	
 re : fclean all
 
