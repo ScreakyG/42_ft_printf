@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 20:02:13 by francois          #+#    #+#             */
-/*   Updated: 2022/12/01 17:36:06 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/02 22:50:23 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,10 @@ int	ft_printpointer(unsigned long nb)
 	int	len;
 	char	*str;
 
+	if (nb == 0)
+		return (write(1, "(nil)", 5));
 	len = 0;
 	len += write(1, "0x", 2);
-	if (nb == 0)
-	{
-		len += write(1, "0", 1);
-		return (len);
-	}
 	str = ft_itoa_ptr(nb);
 	ft_putstr_fd(str, 1);
 	len += ft_strlen(str);
