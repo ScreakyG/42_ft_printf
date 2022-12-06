@@ -6,12 +6,11 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/25 20:38:14 by francois          #+#    #+#             */
-/*   Updated: 2022/12/02 20:50:57 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:28:22 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libftprintf.h"
-
 
 int	ft_putstrlen(char *str)
 {
@@ -37,7 +36,7 @@ int	ft_putcharlen(int c)
 int	ft_putnbrlen(int nb)
 {
 	char	*temp;
-	int	len;
+	int		len;
 
 	len = 0;
 	if (nb == 0)

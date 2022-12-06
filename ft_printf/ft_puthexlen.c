@@ -6,13 +6,13 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 14:45:37 by francois          #+#    #+#             */
-/*   Updated: 2022/11/29 19:23:05 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:26:59 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libftprintf.h"
 
-static int		ft_countnbr(unsigned int nb)
+static int	ft_countnbr(unsigned int nb)
 {
 	int	count;
 
@@ -72,5 +72,5 @@ int	ft_puthexlen(unsigned int nb, const char format)
 	ft_putstr_fd(str, 1);
 	len = ft_strlen(str);
 	free(str);
-	return (len);	
+	return (len);
 }

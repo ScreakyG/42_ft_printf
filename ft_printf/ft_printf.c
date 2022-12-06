@@ -6,12 +6,11 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 15:43:29 by francois          #+#    #+#             */
-/*   Updated: 2022/12/02 20:28:41 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:30:26 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libftprintf.h"
-
 
 int	ft_format(va_list ap, const char format)
 {
@@ -40,8 +39,8 @@ int	ft_format(va_list ap, const char format)
 
 int	ft_printf(const char *str, ...)
 {
-    int	i;
-	int	lentotal;
+	int		i;
+	int		lentotal;
 	va_list	ap;
 
 	i = 0;

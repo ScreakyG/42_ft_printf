@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 20:02:13 by francois          #+#    #+#             */
-/*   Updated: 2022/12/02 22:50:23 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:32:01 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	ft_countnbr(uintptr_t num)
 {
-	int count;
+	int	count;
 
 	count = 0;
 	while (num != 0)
@@ -34,7 +34,7 @@ static char	*ft_fillptr(char *str, uintptr_t num, int size)
 	{
 		if ((num % 16) > 9)
 			str[size] = (87 + (num % 16));
-		else 
+		else
 			str[size] = '0' + (num % 16);
 		size--;
 		num = num / 16;
@@ -42,9 +42,9 @@ static char	*ft_fillptr(char *str, uintptr_t num, int size)
 	return (str);
 }
 
-static char *ft_itoa_ptr(uintptr_t num)
+static char	*ft_itoa_ptr(uintptr_t num)
 {
-	int	count;
+	int		count;
 	char	*str;
 
 	count = ft_countnbr(num);
@@ -57,7 +57,7 @@ static char *ft_itoa_ptr(uintptr_t num)
 
 int	ft_printpointer(unsigned long nb)
 {
-	int	len;
+	int		len;
 	char	*str;
 
 	if (nb == 0)

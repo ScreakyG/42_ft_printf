@@ -6,7 +6,7 @@
 /*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/02 18:14:24 by francois          #+#    #+#             */
-/*   Updated: 2022/12/02 19:57:29 by francois         ###   ########.fr       */
+/*   Updated: 2022/12/06 02:27:49 by francois         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	ft_countnbr(unsigned int nb)
 	while (nb > 9)
 	{
 		count++;
-		nb  = nb / 10;
+		nb = nb / 10;
 	}
 	count++;
 	return (count);
@@ -40,8 +40,8 @@ static int	ft_countnbr(unsigned int nb)
 int	ft_uitoa(unsigned int nb)
 {
 	char	*str;
-	int	len;
-	int	size;
+	int		len;
+	int		size;
 
 	if (nb == 0)
 		return (write(1, "0", 1));
