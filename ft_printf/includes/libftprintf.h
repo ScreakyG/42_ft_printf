@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_PRINTF_H
-# define LIBFT_PRINTF_H
+#ifndef LIBFTPRINTF_H
+# define LIBFTPRINTF_H
 
 # include "../libft/libft.h"
 # include <unistd.h>
@@ -19,7 +19,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 
-int	ft_printf(const char *, ...);
+int	ft_printf(const char *format, ...);
 int	ft_formats(va_list ap, const char format);
 int	ft_putstrlen(char *str);
 int	ft_putcharlen(int c);
