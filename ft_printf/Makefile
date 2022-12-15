@@ -15,7 +15,7 @@ FLAGS = -c -Wall -Wextra -Werror
 INCLUDES = -I./includes
 SRCS = ft_printf.c ft_utils.c ft_puthexlen.c ft_printpointer.c ft_putunsignednbr.c
 OBJS = ${SRCS:.c=.o}
-cc = gcc
+
 
 
 all: $(NAME)
