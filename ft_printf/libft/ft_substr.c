@@ -3,37 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 15:51:26 by francois          #+#    #+#             */
-/*   Updated: 2022/11/22 17:14:51 by francois         ###   ########.fr       */
+/*   Created: 2022/11/10 17:42:33 by francois          #+#    #+#             */
+/*   Updated: 2022/12/13 23:18:10 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_substr(char const *str, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*newchaine;
-	size_t	i;
-	size_t	j;
+	size_t	s_len;
+	size_t	end;
 
-	i = 0;
-	j = 0;
-	if (!str)
-		return (NULL);
-	newchaine = malloc((len + 1) * sizeof(char));
-	if (newchaine == NULL)
+	if (!s)
 		return (0);
-	while (str[i] != '\0')
-	{
-		if (j < len && i >= start)
-		{
-			newchaine[j] = str[i];
-			j++;
-		}
-		i++;
-	}
-	newchaine[j] = '\0';
+	s_len = ft_strlen(s);
+	end = 0;
+	if (start < s_len)
+		end = s_len - start;
+	if (end > len)
+		end = len;
+	newchaine = malloc((end + 1) * sizeof(char));
+	if (!newchaine)
+		return (0);
+	if (start > s_len)
+		newchaine[0] = '\0';
+	else
+		ft_strlcpy(newchaine, &s[start], end + 1);
 	return (newchaine);
 }

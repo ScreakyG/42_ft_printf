@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 16:27:41 by francois          #+#    #+#             */
-/*   Updated: 2022/11/21 18:07:54 by francois         ###   ########.fr       */
+/*   Created: 2022/11/10 17:42:33 by francois          #+#    #+#             */
+/*   Updated: 2022/12/13 23:00:31 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	char	*ptrdest;
 	char	*ptrsrc;
 
-	if (!dest)
+	if (!dest && !src)
 		return (NULL);
 	i = 0;
 	ptrdest = (char *)dest;

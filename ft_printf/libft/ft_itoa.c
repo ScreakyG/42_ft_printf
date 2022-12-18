@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/17 14:15:31 by francois          #+#    #+#             */
-/*   Updated: 2022/11/22 16:37:10 by francois         ###   ########.fr       */
+/*   Created: 2022/11/10 17:42:33 by francois          #+#    #+#             */
+/*   Updated: 2022/12/13 23:04:42 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ static int	ft_countnbr(int n)
 	int	count;
 
 	count = 0;
+	if (n == 0)
+		return (1);
 	if (n < 0)
 	{
 		n *= -1;

@@ -3,37 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francois <francois@student.42.fr>          +#+  +:+       +#+        */
+/*   By: fgonzale <fgonzale@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/15 17:56:30 by francois          #+#    #+#             */
-/*   Updated: 2022/11/22 16:59:41 by francois         ###   ########.fr       */
+/*   Created: 2022/11/10 17:42:33 by francois          #+#    #+#             */
+/*   Updated: 2022/12/13 23:18:05 by fgonzale         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*fill(size_t size, size_t len, size_t i, const char *s1)
-{
-	size_t	j;
-	char	*copy;
-
-	j = 0;
-	while (size < len)
-		size++;
-	copy = malloc((size + 1) * sizeof(char));
-	if (copy == NULL)
-		return (NULL);
-	while (i < len)
-	{
-		copy[j] = s1[i];
-		j++;
-		i++;
-	}
-	copy[j] = '\0';
-	return (copy);
-}
-
-static int	is_charset(char str, char *charset)
+static int	is_charset(char str, char const *charset)
 {
 	int	i;
 
@@ -49,18 +28,29 @@ static int	is_charset(char str, char *charset)
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	size_t	len;
+	size_t	start;
+	size_t	end;
+	char	*str;
 	size_t	i;
-	size_t	size;
 
-	if (s1 == 0)
-		return (NULL);
+	start = 0;
 	i = 0;
-	len = ft_strlen(s1);
-	while (is_charset(s1[len - 1], (char *)set) == 1)
-		len--;
-	while (is_charset(s1[i], (char *)set) == 1)
+	if (s1 == 0 || set == 0)
+		return (0);
+	end = ft_strlen(s1);
+	while (s1[start] != '\0' && is_charset(s1[start], set) == 1)
+		start++;
+	while (end > start && is_charset(s1[end - 1], set) == 1)
+		end--;
+	str = malloc(((end - start) + 1) * sizeof(char));
+	if (str == NULL)
+		return (0);
+	while (start < end)
+	{
+		str[i] = s1[start];
 		i++;
-	size = i;
-	return (fill(size, len, i, s1));
+		start++;
+	}
+	str[i] = '\0';
+	return (str);
 }
